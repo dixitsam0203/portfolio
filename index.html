@@ -3,153 +3,264 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Python & Software Developer</title>
+  <title>Sameer Dixit | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: #f4f4f9;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    body {
+      background: #f8fafc;
       color: #333;
       line-height: 1.6;
     }
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #4e73df;
+      color: white;
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-weight: 600;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #1cc88a;
+    }
+    /* Hero */
     header {
-      background: #222;
-      color: #fff;
-      padding: 30px 20px;
+      background: linear-gradient(135deg, #4e73df, #1cc88a);
+      color: white;
       text-align: center;
+      padding: 100px 20px 80px;
     }
     header h1 {
-      margin: 0;
-      font-size: 2.5em;
+      font-size: 3rem;
+      margin-bottom: 10px;
     }
     header p {
-      margin: 5px 0 0;
-      font-size: 1.2em;
-      color: #aaa;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
     }
+    header .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background: white;
+      color: #4e73df;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    header .btn:hover {
+      background: #1cc88a;
+      color: white;
+    }
+    /* Container */
     .container {
-      width: 80%;
+      width: 85%;
+      max-width: 1100px;
       margin: auto;
-      padding: 20px 0;
-    }
-    section {
-      margin-bottom: 40px;
+      padding: 100px 0;
     }
     h2 {
-      color: #222;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #ddd;
-      display: inline-block;
-      padding-bottom: 5px;
+      text-align: center;
+      font-size: 2.2rem;
+      color: #4e73df;
+      margin-bottom: 50px;
     }
-    .skills, .projects, .contact, .education, .internships, .certificates {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    ul {
+    /* Skills */
+    .skills ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
       list-style: none;
-      padding: 0;
     }
-    ul li {
-      padding: 5px 0;
+    .skills li {
+      background: #1cc88a;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: transform 0.3s;
     }
-    .project {
-      margin-bottom: 20px;
+    .skills li:hover {
+      transform: scale(1.1);
+    }
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      color: #4e73df;
+      margin-bottom: 10px;
+    }
+    .card a {
+      color: #1cc88a;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    /* Contact */
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .contact-buttons a {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 30px;
+      background: #4e73df;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    .contact-buttons a:hover {
+      background: #1cc88a;
     }
     footer {
       text-align: center;
       padding: 20px;
-      background: #222;
-      color: #fff;
-    }
-    a {
-      color: #007BFF;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+      background: #4e73df;
+      color: white;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
-  <header>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home">
     <h1>Sameer Dixit</h1>
-    <p>Python Developer & Software Developer</p>
+    <p>Python Developer | Software Developer | AI/ML Enthusiast</p>
+    <a href="#projects" class="btn">View My Work</a>
+    <a href="https://github.com/dixitsam0203" target="_blank" class="btn">GitHub</a>
   </header>
 
   <div class="container">
-    <section class="about">
-      <h2>About Me</h2>
-      <p>Hi, I’m <strong>Sameer Dixit</strong>, a passionate Python & Software Developer. I specialize in building efficient, scalable, and user-friendly applications using Python and modern tools. My focus is problem-solving, clean code, and delivering impactful solutions.</p>
-    </section>
-
-    <section class="skills">
+    <!-- Skills -->
+    <section id="skills" class="skills">
       <h2>Skills</h2>
       <ul>
-        <li><strong>Languages:</strong> Python</li>
-        <li><strong>Frameworks:</strong> Django, FastAPI</li>
-        <li><strong>Tools:</strong> Git/GitHub, VS Code, Linux</li>
-        <li><strong>Concepts:</strong> Data Structures, OOP, APIs, Software Design</li>
+        <li>Python</li><li>AI</li><li>Machine Learning</li><li>Django</li><li>FastAPI</li><li>Data Analysis</li>
+        <li>HTML</li><li>Git/GitHub</li><li>Project Management</li>
       </ul>
     </section>
 
-    <section class="projects">
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>Heart Disease Prediction</h3>
-        <p>Machine learning model to predict the chances of heart disease based on patient health data. Built with Python, Pandas, NumPy, Scikit-learn, and Matplotlib.</p>
-        <p>GitHub: <a href="https://github.com/dixitsam0203/heartdisease" target="_blank">View Project</a></p>
-      </div>
-      <div class="project">
-        <h3>Library Management System</h3>
-        <p>A complete system to manage library books, members, and transactions. Implemented using Python and MySQL with a user-friendly interface.</p>
-      </div>
-      <div class="project">
-        <h3>Age Calculator</h3>
-        <p>A simple Python-based application that calculates a user’s age from date of birth input. Built using Python and Tkinter GUI framework.</p>
-      </div>
+    <!-- Experience -->
+    <section id="experience">
+      <h2>Experience</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+        <h3>Software Developer Trainee</h3>
+        <p><strong>Arishi Innovation India Pvt Ltd</strong> – Developed scalable applications and worked on end-to-end deployment. Collaborated with cross-functional teams to integrate business requirements into software solutions.</p>
+        </div>
+        <div class="timeline-item">
+        <h3>Software Developer Intern</h3>
+        <p><strong>Arishi Innovation Pvt Ltd</strong> – Designed and implemented REST APIs using Django REST Framework. Integrated responsive HTML templates into Django backend and optimized system performance.</p>
+        </div>
+        <div class="timeline-item">
+        <h3>Software Developer Intern</h3>
+        <p><strong>Ryan Publications</strong> – Assisted in developing a publishing platform, contributed to backend database management, and helped improve the UI/UX design for internal tools.</p>
+        </div>
+        <div class="timeline-item">
+        <h3>Data Analyst Intern</h3>
+        <p><strong>My Dream Food Pvt Ltd</strong> – Conducted exploratory data analysis (EDA), built dashboards, and used Python libraries (Pandas, Matplotlib) to deliver actionable insights for business growth.</p>
+        </div>
+        <div class="timeline-item">
+        <h3>Finance Intern</h3>
+        <p><strong>Acmegrade</strong> – Gained hands-on experience analyzing financial datasets, preparing performance reports, and assisting management in budget planning and forecasting.</p>
+        </div>
+    </div>
     </section>
 
+    <!-- Projects -->
+    <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+        <h3>Heart Disease Prediction</h3>
+        <p>Developed a machine learning model to predict the risk of heart disease using patient health records. Applied feature engineering, trained multiple classification models (Logistic Regression, Random Forest), and achieved high accuracy. Visualized findings with Matplotlib and Seaborn.</p>
+        <a href="https://github.com/dixitsam0203/heartdisease" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+        <h3>Library Management System</h3>
+        <p>Built a comprehensive Python-MySQL application to manage library books, member records, and transactions. Implemented CRUD operations, automated reminders for due books, and designed a simple GUI for librarians.</p>
+    </div>
+    <div class="project-card">
+        <h3>Age Calculator</h3>
+        <p>Created a desktop app using Python and Tkinter to calculate age based on user input. Focused on error handling, user experience, and portability for small utilities.</p>
+    </div>
+    </section>
+
+
+    <!-- Education -->
     <section class="education">
       <h2>Education</h2>
-      <p>B.Tech - CSBS (Computer Science and Business System)</p>
-      <p>Undergraduate, Medicaps University, 2021-2025</p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>B.Tech, CSBS</h3>
+          <p>Medi-Caps University (2021–2025)</p>
+        </div>
+        <div class="card">
+          <h3>St. Paul Higher Secondary School</h3>
+          <p>2006–2021</p>
+        </div>
+      </div>
     </section>
 
-    <section class="certificates">
-      <h2>Certificates</h2>
-      <ul>
-        <li>Machine Learning with Python</li>
-        <li>Python Programming</li>
-        <li>Python for Data Science</li>
-        <li>Introduction to Analytics</li>
-        <li>Project Management</li>
-      </ul>
-    </section>
-
-    <section class="internships">
-      <h2>Internships</h2>
-      <ul>
-        <li><strong>Data Analyst Intern </strong> – Gained experience in analyzing data, creating dashboards, and extracting insights.</li>
-         <li><strong>Finance Intern </strong> – Gained experience in analyzing financial data, management.</li>
-        <li><strong>Software Developer Intern</strong> – Worked on application development, debugging, and deployment of software modules.</li>
-      </ul>
-    </section>
-
-    <section class="contact">
+    <!-- Contact -->
+    <section id="contact" class="contact">
       <h2>Contact</h2>
-      <p>Phone: 9522610674</p>
-      <p>Email: <a href="mailto:sameerdixit516@gmail.com">sameerdixit516@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/sameer-dixit-a48489243/" target="_blank">linkedin.com/in/sameer-dixit-a48489243</a></p>
-      <p>GitHub: <a href="https://github.com/dixitsam0203" target="_blank">github.com/dixitsam0203</a></p>
+      <div class="contact-buttons">
+        <a href="mailto:sameerdixit516@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://www.linkedin.com/in/sameer-dixit-a48489243/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/dixitsam0203" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      </div>
     </section>
   </div>
 
   <footer>
-    <p>© 2025 Sameer Dixit. All rights reserved.</p>
+    <p>© 2025 Sameer Dixit. All Rights Reserved.</p>
   </footer>
 </body>
 </html>
