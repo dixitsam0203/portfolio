@@ -80,7 +80,12 @@ header h1{
 .typing{
   font-size:1.3rem;
   margin:15px 0 25px;
-  min-height:30px;
+  animation:fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
 }
 
 .btn{
@@ -104,7 +109,7 @@ header h1{
 /* CONTAINER */
 .container{
   width:85%;
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
 }
 
@@ -175,8 +180,28 @@ h2{
   border-radius:50%;
 }
 
+/* PROJECTS GRID */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+/* Responsive */
+@media(max-width:992px){
+  .projects{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .projects{
+    grid-template-columns:1fr;
+  }
+}
+
 /* CARDS */
-.card-grid, .projects{
+.card-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:25px;
@@ -189,7 +214,12 @@ h2{
   transition:0.4s;
 }
 
-.card:hover, .project-card:hover{
+.project-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px rgba(28,200,138,0.6);
+}
+
+.card:hover{
   transform:translateY(-8px);
   box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
@@ -243,7 +273,9 @@ footer{
 
 <header id="home">
 <h1>Sameer Dixit</h1>
-<div class="typing" id="typing"></div>
+<div class="typing">
+Python Developer | Software Developer | AI/ML Enthusiast
+</div>
 <a href="#projects" class="btn">View My Work</a>
 <a href="https://github.com/dixitsam0203" target="_blank" class="btn">GitHub</a>
 </header>
@@ -265,102 +297,77 @@ footer{
 <section id="experience">
 <h2>Experience</h2>
 <div class="timeline">
-
 <div class="timeline-item">
 <h3>Software Developer Trainee</h3>
-<p><strong>Arishi Innovation India Pvt Ltd</strong> – Developed scalable applications and worked on end-to-end deployment. Collaborated with cross-functional teams to integrate business requirements into software solutions.</p>
+<p><strong>Arishi Innovation India Pvt Ltd</strong> – Developed scalable applications and worked on end-to-end deployment.</p>
 </div>
-
 <div class="timeline-item">
 <h3>Software Developer Intern</h3>
-<p><strong>Arishi Innovation Pvt Ltd</strong> – Designed and implemented REST APIs using Django REST Framework. Integrated responsive HTML templates into Django backend and optimized system performance.</p>
+<p><strong>Arishi Innovation Pvt Ltd</strong> – Designed and implemented REST APIs using Django REST Framework.</p>
 </div>
-
 <div class="timeline-item">
 <h3>Software Developer Intern</h3>
-<p><strong>Ryan Publications</strong> – Assisted in developing a publishing platform, contributed to backend database management, and helped improve the UI/UX design for internal tools.</p>
+<p><strong>Ryan Publications</strong> – Contributed to backend database management and UI improvements.</p>
 </div>
-
 <div class="timeline-item">
 <h3>Data Analyst Intern</h3>
-<p><strong>My Dream Food Pvt Ltd</strong> – Conducted exploratory data analysis (EDA), built dashboards, and used Python libraries (Pandas, Matplotlib) to deliver actionable insights for business growth.</p>
+<p><strong>My Dream Food Pvt Ltd</strong> – Conducted EDA and built dashboards using Python.</p>
 </div>
-
 <div class="timeline-item">
 <h3>Data Analyst Intern</h3>
-<p><strong>NKJ Biofuel Pvt Ltd</strong> – Analyzed large datasets to identify trends and patterns. Created visualizations and reports to support decision-making processes.</p>
+<p><strong>NKJ Biofuel Pvt Ltd</strong> – Created visualizations and analytical reports.</p>
 </div>
-
 <div class="timeline-item">
 <h3>Finance Intern</h3>
-<p><strong>Acmegrade</strong> – Gained hands-on experience analyzing financial datasets, preparing performance reports, and assisting management in budget planning and forecasting.</p>
+<p><strong>Acmegrade</strong> – Assisted in budget planning and financial reporting.</p>
 </div>
-
 </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="projects">
+<section id="projects">
 <h2>Projects</h2>
+<div class="projects">
 
 <div class="project-card">
 <h3>Heart Disease Prediction</h3>
-<p>Developed a machine learning model to predict heart disease using Logistic Regression and Random Forest. Performed feature engineering and visualized insights using Matplotlib & Seaborn.</p>
+<p>ML model using Logistic Regression & Random Forest with data visualization.</p>
 <a href="https://github.com/dixitsam0203/heartdisease" target="_blank">View Project</a>
 </div>
 
 <div class="project-card">
 <h3>Library Management System</h3>
-<p>Built a Python-MySQL application to manage books, members, and transactions. Implemented CRUD operations and automated due-date reminders.</p>
+<p>Python-MySQL system with CRUD operations and automated reminders.</p>
 <a href="https://github.com/dixitsam0203/library" target="_blank">View Project</a>
 </div>
 
 <div class="project-card">
 <h3>Age Calculator</h3>
-<p>Created a desktop application using Python & Tkinter to calculate age with error handling and user-friendly interface.</p>
+<p>Desktop app using Python & Tkinter with clean UI.</p>
 </div>
 
+</div>
 </section>
 
 <!-- ACHIEVEMENTS -->
 <section id="achievements">
 <h2>Achievements</h2>
 <div class="card-grid">
-
 <div class="card">
 <h3>Research Paper Published</h3>
-<p>Heart Disease Prediction research published in International Journal of Scientific Research in Engineering and Management.</p>
+<p>Heart Disease Prediction published in IJSEM.</p>
 </div>
-
 <div class="card">
 <h3>Python Certification</h3>
-<p>Certified in Python Programming demonstrating strong software development skills.</p>
+<p>Certified Python Developer.</p>
 </div>
-
 <div class="card">
 <h3>Machine Learning Certification</h3>
-<p>Certified in ML fundamentals including model building and evaluation.</p>
+<p>Certified in ML fundamentals.</p>
 </div>
-
 <div class="card">
 <h3>Project Management Certification</h3>
-<p>Certified in Agile and project execution methodologies.</p>
-</div>
-
-</div>
-</section>
-
-<!-- EDUCATION -->
-<section>
-<h2>Education</h2>
-<div class="card-grid">
-<div class="card">
-<h3>B.Tech, CSBS</h3>
-<p>Medi-Caps University (2021–2025)</p>
-</div>
-<div class="card">
-<h3>St. Paul Higher Secondary School</h3>
-<p>2006–2021</p>
+<p>Certified in Agile methodologies.</p>
 </div>
 </div>
 </section>
@@ -382,23 +389,6 @@ footer{
 </footer>
 
 <script>
-const roles=["Python Developer","Software Developer","AI/ML Enthusiast"];
-let i=0,j=0,current="",isDeleting=false;
-function type(){
-  if(i<roles.length){
-    if(!isDeleting && j<=roles[i].length){
-      current=roles[i].substring(0,j++);
-    }else if(isDeleting && j>=0){
-      current=roles[i].substring(0,j--);
-    }
-    document.getElementById("typing").innerHTML=current;
-    if(j==roles[i].length) isDeleting=true;
-    if(isDeleting && j==0){isDeleting=false;i++;}
-  }else{i=0;}
-  setTimeout(type,100);
-}
-type();
-
 const sections=document.querySelectorAll("section");
 window.addEventListener("scroll",()=>{
   sections.forEach(sec=>{
