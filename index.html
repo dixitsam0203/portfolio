@@ -49,7 +49,6 @@ nav a{
   text-decoration:none;
   font-weight:600;
   position:relative;
-  transition:0.3s;
 }
 
 nav a::after{
@@ -102,15 +101,16 @@ header h1{
   transform:translateY(-3px);
 }
 
-/* SECTIONS */
+/* CONTAINER */
 .container{
   width:85%;
   max-width:1100px;
   margin:auto;
 }
 
+/* SECTIONS */
 section{
-  background:rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.12);
   backdrop-filter:blur(12px);
   padding:60px 40px;
   margin-bottom:100px;
@@ -151,7 +151,6 @@ h2{
 
 .skills li:hover{
   transform:scale(1.1);
-  box-shadow:0 5px 20px rgba(0,0,0,0.3);
 }
 
 /* TIMELINE */
@@ -184,7 +183,7 @@ h2{
 }
 
 .card, .project-card{
-  background:rgba(255,255,255,0.15);
+  background:rgba(255,255,255,0.18);
   padding:25px;
   border-radius:15px;
   transition:0.4s;
@@ -251,69 +250,52 @@ footer{
 
 <div class="container">
 
+<!-- SKILLS -->
 <section id="skills" class="skills">
 <h2>Skills</h2>
 <ul>
 <li>Python</li><li>Artificial Intelligence</li><li>Machine Learning</li>
-<li>Google Cloud</li><li>Vertex AI</li><li>FastAPI</li>
-<li>Data Analysis</li><li>HTML</li><li>Git/GitHub</li>
-<li>Project Management</li>
+<li>Google Cloud</li><li>Vertex AI</li><li>Excel</li>
+<li>FastAPI</li><li>Data Analysis</li>
+<li>HTML</li><li>Git/GitHub</li><li>Project Management</li>
 </ul>
 </section>
 
+<!-- EXPERIENCE (FULL ORIGINAL KEPT) -->
 <section id="experience">
 <h2>Experience</h2>
 <div class="timeline">
+
 <div class="timeline-item">
 <h3>Software Developer Trainee</h3>
-<p><strong>Arishi Innovation India Pvt Ltd</strong> – Developed scalable applications and end-to-end deployments.</p>
+<p><strong>Arishi Innovation India Pvt Ltd</strong> – Developed scalable applications and worked on end-to-end deployment. Collaborated with cross-functional teams to integrate business requirements into software solutions.</p>
 </div>
+
 <div class="timeline-item">
 <h3>Software Developer Intern</h3>
-<p><strong>Arishi Innovation Pvt Ltd</strong> – Built REST APIs using Django REST Framework.</p>
+<p><strong>Arishi Innovation Pvt Ltd</strong> – Designed and implemented REST APIs using Django REST Framework. Integrated responsive HTML templates into Django backend and optimized system performance.</p>
 </div>
+
+<div class="timeline-item">
+<h3>Software Developer Intern</h3>
+<p><strong>Ryan Publications</strong> – Assisted in developing a publishing platform, contributed to backend database management, and helped improve the UI/UX design for internal tools.</p>
+</div>
+
 <div class="timeline-item">
 <h3>Data Analyst Intern</h3>
-<p><strong>My Dream Food Pvt Ltd</strong> – Performed EDA and built dashboards using Python.</p>
-</div>
-</div>
-</section>
-
-<section id="projects" class="projects">
-<h2>Projects</h2>
-<div class="project-card">
-<h3>Heart Disease Prediction</h3>
-<p>ML model predicting heart disease risk with high accuracy.</p>
-<a href="https://github.com/dixitsam0203/heartdisease" target="_blank">View Project</a>
+<p><strong>My Dream Food Pvt Ltd</strong> – Conducted exploratory data analysis (EDA), built dashboards, and used Python libraries (Pandas, Matplotlib) to deliver actionable insights for business growth.</p>
 </div>
 
-<div class="project-card">
-<h3>Library Management System</h3>
-<p>Python-MySQL system managing books and transactions.</p>
-<a href="https://github.com/dixitsam0203/library" target="_blank">View Project</a>
+<div class="timeline-item">
+<h3>Data Analyst Intern</h3>
+<p><strong>NKJ Biofuel Pvt Ltd</strong> – Analyzed large datasets to identify trends and patterns. Created visualizations and reports to support decision-making processes.</p>
 </div>
-</section>
 
-<section id="achievements">
-<h2>Achievements</h2>
-<div class="card-grid">
-<div class="card">
-<h3>Research Paper</h3>
-<p>Published ML heart disease prediction research.</p>
+<div class="timeline-item">
+<h3>Finance Intern</h3>
+<p><strong>Acmegrade</strong> – Gained hands-on experience analyzing financial datasets, preparing performance reports, and assisting management in budget planning and forecasting.</p>
 </div>
-<div class="card">
-<h3>Python Certification</h3>
-<p>Certified Python developer.</p>
-</div>
-</div>
-</section>
 
-<section id="contact">
-<h2>Contact</h2>
-<div class="contact-buttons">
-<a href="mailto:sameerdixit516@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-<a href="https://www.linkedin.com/in/sameer-dixit-a48489243/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-<a href="https://github.com/dixitsam0203" target="_blank"><i class="fab fa-github"></i> GitHub</a>
 </div>
 </section>
 
@@ -324,7 +306,6 @@ footer{
 </footer>
 
 <script>
-/* Typing Effect */
 const roles=["Python Developer","Software Developer","AI/ML Enthusiast"];
 let i=0,j=0,current="",isDeleting=false;
 function type(){
@@ -342,12 +323,10 @@ function type(){
 }
 type();
 
-/* Scroll Animation */
 const sections=document.querySelectorAll("section");
 window.addEventListener("scroll",()=>{
   sections.forEach(sec=>{
-    const top=sec.getBoundingClientRect().top;
-    if(top<window.innerHeight-100){
+    if(sec.getBoundingClientRect().top < window.innerHeight-100){
       sec.classList.add("show");
     }
   });
