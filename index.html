@@ -35,57 +35,65 @@ nav{
   position:fixed;
   width:100%;
   top:0;
-  backdrop-filter:blur(12px);
-  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.4);
   display:flex;
   justify-content:center;
-  gap:40px;
-  padding:20px 0;
+  gap:35px;
+  padding:18px 0;
   z-index:1000;
-  border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
 nav a{
   color:#fff;
   text-decoration:none;
-  font-weight:500;
+  font-weight:600;
+  position:relative;
+}
+
+nav a::after{
+  content:"";
+  width:0%;
+  height:2px;
+  background:#1cc88a;
+  position:absolute;
+  left:0;
+  bottom:-5px;
   transition:0.3s;
 }
 
-nav a:hover{
-  color:#1cc88a;
+nav a:hover::after{
+  width:100%;
 }
 
 /* HERO */
 header{
   text-align:center;
-  padding:180px 20px 120px;
+  padding:160px 20px 120px;
 }
 
 header h1{
-  font-size:3.8rem;
+  font-size:3.5rem;
   font-weight:700;
 }
 
 .typing{
-  font-size:1.4rem;
-  margin:15px 0 20px;
-  opacity:0.9;
+  font-size:1.3rem;
+  margin:15px 0 25px;
+  animation:fadeIn 2s ease-in-out;
 }
 
-.intro{
-  max-width:600px;
-  margin:auto;
-  opacity:0.85;
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
 }
 
-/* BUTTONS */
 .btn{
   display:inline-block;
   margin:10px;
-  padding:12px 30px;
-  border-radius:50px;
-  background:linear-gradient(45deg,#ffffff,#dfe6ff);
+  padding:12px 28px;
+  border-radius:40px;
+  background:#fff;
   color:#4e73df;
   font-weight:600;
   text-decoration:none;
@@ -95,8 +103,7 @@ header h1{
 .btn:hover{
   background:#1cc88a;
   color:#fff;
-  transform:translateY(-4px) scale(1.05);
-  box-shadow:0 10px 25px rgba(28,200,138,0.5);
+  transform:translateY(-3px);
 }
 
 /* CONTAINER */
@@ -108,13 +115,12 @@ header h1{
 
 /* SECTIONS */
 section{
-  background:rgba(255,255,255,0.1);
-  backdrop-filter:blur(15px);
-  padding:70px 50px;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(12px);
+  padding:60px 40px;
   margin-bottom:100px;
   border-radius:20px;
-  box-shadow:0 8px 30px rgba(0,0,0,0.25);
-  border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
   opacity:0;
   transform:translateY(40px);
   transition:1s;
@@ -128,7 +134,7 @@ section.show{
 h2{
   text-align:center;
   margin-bottom:50px;
-  font-size:2.5rem;
+  font-size:2.3rem;
 }
 
 /* SKILLS */
@@ -144,6 +150,7 @@ h2{
   padding:12px 22px;
   background:linear-gradient(45deg,#4e73df,#1cc88a);
   border-radius:50px;
+  font-weight:600;
   transition:0.4s;
 }
 
@@ -158,28 +165,29 @@ h2{
 }
 
 .timeline-item{
-  margin-bottom:35px;
+  margin-bottom:40px;
   position:relative;
 }
 
 .timeline-item::before{
   content:"";
   position:absolute;
-  left:-11px;
+  left:-10px;
   top:5px;
-  width:16px;
-  height:16px;
+  width:15px;
+  height:15px;
   background:#1cc88a;
   border-radius:50%;
 }
 
-/* PROJECT GRID */
+/* PROJECTS GRID */
 .projects{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:25px;
 }
 
+/* Responsive */
 @media(max-width:992px){
   .projects{
     grid-template-columns:repeat(2,1fr);
@@ -193,16 +201,27 @@ h2{
 }
 
 /* CARDS */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
 .card, .project-card{
-  background:rgba(255,255,255,0.15);
+  background:rgba(255,255,255,0.18);
   padding:25px;
   border-radius:15px;
   transition:0.4s;
 }
 
 .project-card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 15px 40px rgba(28,200,138,0.6);
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px rgba(28,200,138,0.6);
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
 .project-card a{
@@ -229,14 +248,14 @@ h2{
 }
 
 .contact-buttons a:hover{
-  transform:translateY(-4px);
+  transform:translateY(-3px);
 }
 
-/* FOOTER */
 footer{
   text-align:center;
   padding:25px;
-  background:rgba(0,0,0,0.7);
+  background:rgba(0,0,0,0.6);
+  margin-top:50px;
 }
 </style>
 </head>
@@ -257,107 +276,133 @@ footer{
 <div class="typing">
 Python Developer | Software Developer | AI/ML Enthusiast
 </div>
-<p class="intro">
-Passionate Software Developer focused on building scalable applications, AI-driven solutions, and impactful digital products.
-</p>
 <a href="#projects" class="btn">View My Work</a>
 <a href="https://github.com/dixitsam0203" target="_blank" class="btn">GitHub</a>
 </header>
 
 <div class="container">
 
+<!-- SKILLS -->
 <section id="skills" class="skills">
 <h2>Skills</h2>
 <ul>
-<li>Python</li><li>AI</li><li>Machine Learning</li>
-<li>FastAPI</li><li>Google Cloud</li><li>Data Analysis</li>
-<li>HTML</li><li>Git/GitHub</li>
+<li>Python</li><li>Artificial Intelligence</li><li>Machine Learning</li>
+<li>Google Cloud</li><li>Vertex AI</li><li>Excel</li>
+<li>FastAPI</li><li>Data Analysis</li>
+<li>HTML</li><li>Git/GitHub</li><li>Project Management</li>
 </ul>
 </section>
 
+<!-- EXPERIENCE -->
 <section id="experience">
 <h2>Experience</h2>
 <div class="timeline">
-
 <div class="timeline-item">
 <h3>Associate Software Developer</h3>
-<p><strong>Arishi Innovation India Pvt Ltd</strong> – Promoted from Trainee. Worked on backend systems, APIs, and deployment.</p>
+<p><strong>Arishi Innovation India Pvt Ltd</strong> –Promoted from Software Developer Trainee. Worked on backend systems, API integration, and deployment on scalable applications.</p>
 </div>
-
 <div class="timeline-item">
 <h3>Software Developer Trainee</h3>
-<p><strong>Arishi Innovation India Pvt Ltd</strong> – Developed scalable applications.</p>
+<p><strong>Arishi Innovation India Pvt Ltd</strong> – Developed scalable applications and worked on end-to-end deployment.</p>
 </div>
-
 <div class="timeline-item">
 <h3>Software Developer Intern</h3>
-<p><strong>Arishi Innovation Pvt Ltd</strong> – Built REST APIs.</p>
+<p><strong>Arishi Innovation Pvt Ltd</strong> – Designed and implemented REST APIs using Django REST Framework.</p>
 </div>
-
+<div class="timeline-item">
+<h3>Software Developer Intern</h3>
+<p><strong>Ryan Publications</strong> – Contributed to backend database management and UI improvements.</p>
+</div>
+<div class="timeline-item">
+<h3>Data Analyst Intern</h3>
+<p><strong>My Dream Food Pvt Ltd</strong> – Conducted EDA and built dashboards using Python.</p>
+</div>
+<div class="timeline-item">
+<h3>Data Analyst Intern</h3>
+<p><strong>NKJ Biofuel Pvt Ltd</strong> – Created visualizations and analytical reports.</p>
+</div>
+<div class="timeline-item">
+<h3>Finance Intern</h3>
+<p><strong>Acmegrade</strong> – Assisted in budget planning and financial reporting.</p>
+</div>
 </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
 <h2>Projects</h2>
 <div class="projects">
 
 <div class="project-card">
 <h3>Heart Disease Prediction</h3>
-<p>ML model using Logistic Regression & Random Forest.</p>
+<p>ML model using Logistic Regression & Random Forest with data visualization.</p>
 <a href="https://github.com/dixitsam0203/heartdisease" target="_blank">View Project</a>
 </div>
 
 <div class="project-card">
 <h3>Library Management System</h3>
-<p>Python-MySQL CRUD system.</p>
+<p>Python-MySQL system with CRUD operations and automated reminders.</p>
 <a href="https://github.com/dixitsam0203/library" target="_blank">View Project</a>
 </div>
 
 <div class="project-card">
 <h3>Age Calculator</h3>
-<p>Desktop app using Python Tkinter.</p>
+<p>Desktop app using Python & Tkinter with clean UI.</p>
 </div>
 
 </div>
 </section>
 
+<!-- ACHIEVEMENTS -->
 <section id="achievements">
 <h2>Achievements</h2>
 <div class="card-grid">
-<div class="card"><h3>Research Paper</h3></div>
-<div class="card"><h3>Python Certification</h3></div>
-<div class="card"><h3>ML Certification</h3></div>
+<div class="card">
+<h3>Research Paper Published</h3>
+<p>Heart Disease Prediction published in IJSEM.</p>
+</div>
+<div class="card">
+<h3>Python Certification</h3>
+<p>Certified Python Developer.</p>
+</div>
+<div class="card">
+<h3>Machine Learning Certification</h3>
+<p>Certified in ML fundamentals.</p>
+</div>
+<div class="card">
+<h3>Project Management Certification</h3>
+<p>Certified in Agile methodologies.</p>
+</div>
 </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
 <h2>Contact</h2>
 <div class="contact-buttons">
-<a href="mailto:sameerdixit516@gmail.com">Email</a>
-<a href="https://www.linkedin.com/in/sameer-dixit-a48489243/" target="_blank">LinkedIn</a>
-<a href="https://github.com/dixitsam0203" target="_blank">GitHub</a>
+<a href="mailto:sameerdixit516@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+<a href="https://www.linkedin.com/in/sameer-dixit-a48489243/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+<a href="https://github.com/dixitsam0203" target="_blank"><i class="fab fa-github"></i> GitHub</a>
 </div>
 </section>
 
 </div>
 
 <footer>
-© 2025 Sameer Dixit
+© 2025 Sameer Dixit | All Rights Reserved
 </footer>
 
 <script>
 const sections=document.querySelectorAll("section");
-
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
+window.addEventListener("scroll",()=>{
+  sections.forEach(sec=>{
+    if(sec.getBoundingClientRect().top < window.innerHeight-100){
+      sec.classList.add("show");
     }
   });
 });
-
-sections.forEach(sec=>observer.observe(sec));
 </script>
 
 </body>
 </html>
+
