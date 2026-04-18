@@ -35,20 +35,26 @@ nav{
   position:fixed;
   width:100%;
   top:0;
-  backdrop-filter:blur(10px);
-  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(12px);
+  background:rgba(0,0,0,0.5);
   display:flex;
   justify-content:center;
   gap:35px;
   padding:18px 0;
   z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
 nav a{
   color:#fff;
   text-decoration:none;
-  font-weight:600;
+  font-weight:500;
   position:relative;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#1cc88a;
 }
 
 nav a::after{
@@ -75,35 +81,33 @@ header{
 header h1{
   font-size:3.5rem;
   font-weight:700;
+  letter-spacing:1px;
 }
 
 .typing{
   font-size:1.3rem;
   margin:15px 0 25px;
-  animation:fadeIn 2s ease-in-out;
+  opacity:0.9;
 }
 
-@keyframes fadeIn{
-  from{opacity:0;}
-  to{opacity:1;}
-}
-
+/* BUTTONS */
 .btn{
   display:inline-block;
   margin:10px;
-  padding:12px 28px;
+  padding:12px 30px;
   border-radius:40px;
-  background:#fff;
+  background:rgba(255,255,255,0.9);
   color:#4e73df;
   font-weight:600;
   text-decoration:none;
-  transition:0.4s;
+  transition:0.3s;
 }
 
 .btn:hover{
   background:#1cc88a;
   color:#fff;
-  transform:translateY(-3px);
+  transform:translateY(-4px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
 }
 
 /* CONTAINER */
@@ -115,15 +119,19 @@ header h1{
 
 /* SECTIONS */
 section{
-  background:rgba(255,255,255,0.12);
-  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,0.10);
+  backdrop-filter:blur(15px);
   padding:60px 40px;
-  margin-bottom:100px;
+  margin-bottom:80px;
   border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  box-shadow:0 8px 25px rgba(0,0,0,0.2);
   opacity:0;
   transform:translateY(40px);
-  transition:1s;
+  transition:0.8s;
+}
+
+section:hover{
+  box-shadow:0 15px 40px rgba(0,0,0,0.35);
 }
 
 section.show{
@@ -135,6 +143,7 @@ h2{
   text-align:center;
   margin-bottom:50px;
   font-size:2.3rem;
+  letter-spacing:1px;
 }
 
 /* SKILLS */
@@ -142,20 +151,21 @@ h2{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:20px;
+  gap:15px;
   list-style:none;
 }
 
 .skills li{
-  padding:12px 22px;
+  padding:10px 20px;
   background:linear-gradient(45deg,#4e73df,#1cc88a);
   border-radius:50px;
-  font-weight:600;
-  transition:0.4s;
+  font-weight:500;
+  transition:0.3s;
 }
 
 .skills li:hover{
-  transform:scale(1.1);
+  transform:scale(1.08);
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* TIMELINE */
@@ -165,8 +175,12 @@ h2{
 }
 
 .timeline-item{
-  margin-bottom:40px;
+  margin-bottom:35px;
   position:relative;
+}
+
+.timeline-item h3{
+  font-size:1.2rem;
 }
 
 .timeline-item::before{
@@ -174,20 +188,19 @@ h2{
   position:absolute;
   left:-10px;
   top:5px;
-  width:15px;
-  height:15px;
+  width:14px;
+  height:14px;
   background:#1cc88a;
   border-radius:50%;
 }
 
-/* PROJECTS GRID */
+/* PROJECTS */
 .projects{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:25px;
 }
 
-/* Responsive */
 @media(max-width:992px){
   .projects{
     grid-template-columns:repeat(2,1fr);
@@ -208,23 +221,30 @@ h2{
 }
 
 .card, .project-card{
-  background:rgba(255,255,255,0.18);
+  background:rgba(255,255,255,0.15);
   padding:25px;
   border-radius:15px;
-  transition:0.4s;
+  transition:0.3s;
+  border:1px solid rgba(255,255,255,0.1);
 }
 
 .project-card:hover{
-  transform:translateY(-8px);
+  transform:translateY(-10px);
   box-shadow:0 15px 35px rgba(28,200,138,0.6);
 }
 
 .card:hover{
   transform:translateY(-8px);
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.project-card h3{
+  margin-bottom:10px;
 }
 
 .project-card a{
+  display:inline-block;
+  margin-top:10px;
   color:#1cc88a;
   text-decoration:none;
   font-weight:600;
@@ -234,7 +254,7 @@ h2{
 .contact-buttons{
   display:flex;
   justify-content:center;
-  gap:25px;
+  gap:20px;
   flex-wrap:wrap;
 }
 
@@ -248,14 +268,17 @@ h2{
 }
 
 .contact-buttons a:hover{
-  transform:translateY(-3px);
+  transform:translateY(-4px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
 }
 
+/* FOOTER */
 footer{
   text-align:center;
-  padding:25px;
+  padding:20px;
   background:rgba(0,0,0,0.6);
   margin-top:50px;
+  font-size:0.9rem;
 }
 </style>
 </head>
@@ -297,34 +320,42 @@ Python Developer | Software Developer | AI/ML Enthusiast
 <section id="experience">
 <h2>Experience</h2>
 <div class="timeline">
+
 <div class="timeline-item">
 <h3>Associate Software Developer</h3>
 <p><strong>Arishi Innovation India Pvt Ltd</strong> –Promoted from Software Developer Trainee. Worked on backend systems, API integration, and deployment on scalable applications.</p>
 </div>
+
 <div class="timeline-item">
 <h3>Software Developer Trainee</h3>
 <p><strong>Arishi Innovation India Pvt Ltd</strong> – Developed scalable applications and worked on end-to-end deployment.</p>
 </div>
+
 <div class="timeline-item">
 <h3>Software Developer Intern</h3>
 <p><strong>Arishi Innovation Pvt Ltd</strong> – Designed and implemented REST APIs using Django REST Framework.</p>
 </div>
+
 <div class="timeline-item">
 <h3>Software Developer Intern</h3>
 <p><strong>Ryan Publications</strong> – Contributed to backend database management and UI improvements.</p>
 </div>
+
 <div class="timeline-item">
 <h3>Data Analyst Intern</h3>
 <p><strong>My Dream Food Pvt Ltd</strong> – Conducted EDA and built dashboards using Python.</p>
 </div>
+
 <div class="timeline-item">
 <h3>Data Analyst Intern</h3>
 <p><strong>NKJ Biofuel Pvt Ltd</strong> – Created visualizations and analytical reports.</p>
 </div>
+
 <div class="timeline-item">
 <h3>Finance Intern</h3>
 <p><strong>Acmegrade</strong> – Assisted in budget planning and financial reporting.</p>
 </div>
+
 </div>
 </section>
 
@@ -357,22 +388,27 @@ Python Developer | Software Developer | AI/ML Enthusiast
 <section id="achievements">
 <h2>Achievements</h2>
 <div class="card-grid">
+
 <div class="card">
 <h3>Research Paper Published</h3>
 <p>Heart Disease Prediction published in IJSEM.</p>
 </div>
+
 <div class="card">
 <h3>Python Certification</h3>
 <p>Certified Python Developer.</p>
 </div>
+
 <div class="card">
 <h3>Machine Learning Certification</h3>
 <p>Certified in ML fundamentals.</p>
 </div>
+
 <div class="card">
 <h3>Project Management Certification</h3>
 <p>Certified in Agile methodologies.</p>
 </div>
+
 </div>
 </section>
 
@@ -405,4 +441,3 @@ window.addEventListener("scroll",()=>{
 
 </body>
 </html>
-
